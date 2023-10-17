@@ -57,7 +57,57 @@
         </li>
       </ul>
     </nav>
-    <button class="header__button-log-in">ВОЙТИ</button>
+    <div class="header__right-wrapper">
+      <button class="header__button-log-in">ВОЙТИ</button>
+      <input type="checkbox" id="header-hamburger-menu-checkbox" class="header__hamburger-menu-checkbox" />
+      <label for="header-hamburger-menu-checkbox" class="header__hamburger-menu-label">
+        <img src="./images/hamburgerMenuIcon.svg" class="header__hamburger-menu-icon" alt="Hamburger menu icon">
+        <img src="./images/hamburgerMenuIconClose.svg" class="header__hamburger-menu-icon_close"
+          alt="Hamburger menu icon">
+      </label>
+      <div class="header__mobile-menu-wrapper">
+        <ul class="header__mobile-nav-list">
+          <li class="header__mobile-nav-list-item">
+            <input type="checkbox" id="header-mobile-nav-list-first-item-checkbox"
+              class="header__mobile-nav-list-item-checkbox">
+            <label for="header-mobile-nav-list-first-item-checkbox" class="header__mobile-nav-list-item-label">
+              <span>Рекламодателям</span>
+              <img src="./images/arrowIcon.svg" class="header__mobile-nav-list-item-icon" alt="Mobile menu arrow icon">
+            </label>
+            <ul class="header__inner-mobile-nav-list">
+              <li class="header__inner-mobile-nav-list-item">
+                <a class="header__inner-mobile-nav-list-link" href="#">Нативная реклама</a>
+              </li>
+              <li class="header__inner-mobile-nav-list-item">
+                <a class="header__inner-mobile-nav-list-link" href="#">Рекламные форматы</a>
+              </li>
+              <li class="header__inner-mobile-nav-list-item">
+                <a class="header__inner-mobile-nav-list-link" href="#">Примеры размещений</a>
+              </li>
+            </ul>
+          </li>
+          <li class="header__mobile-nav-list-item">
+            <input type="checkbox" id="header-mobile-nav-list-second-item-checkbox"
+              class="header__mobile-nav-list-item-checkbox">
+            <label for="header-mobile-nav-list-second-item-checkbox" class="header__mobile-nav-list-item-label">
+              <span>Паблишерам</span>
+              <img src="./images/arrowIcon.svg" class="header__mobile-nav-list-item-icon" alt="Mobile menu arrow icon">
+            </label>
+            <ul class="header__inner-mobile-nav-list">
+              <li class="header__inner-mobile-nav-list-item">
+                <a class="header__inner-mobile-nav-list-link" href="#">Монетизация сайтов</a>
+              </li>
+              <li class="header__inner-mobile-nav-list-item">
+                <a class="header__inner-mobile-nav-list-link" href="#">Техническая интеграция</a>
+              </li>
+            </ul>
+          </li>
+          <li class="header__mobile-nav-list-item">
+            <a class="header__mobile-nav-list-link" href="#">Контакты</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </header>
 </body>
 

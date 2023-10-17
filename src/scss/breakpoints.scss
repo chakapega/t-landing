@@ -1,0 +1,29 @@
+@mixin largeDesktopScreen() {
+  @media (max-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin desktopScreen() {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin tabletDesktopScreen() {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin mobileTabletScreen() {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin mobileScreen() {
+  @media (max-width: 375px) {
+    @content;
+  }
+}

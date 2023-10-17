@@ -1,5 +1,6 @@
 @import "./normalize";
 @import "./colors.scss";
+@import "./breakpoints.scss";
 
 body {
   font-family: 'Montserrat', sans-serif;
@@ -11,13 +12,32 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 6rem;
+  height: 5rem;
   background-color: $bgPrimary;
   border-bottom: 1px solid $bgSecondary;
+  box-sizing: border-box;
 
   &__logo {
+    display: flex;
+    align-items: center;
     margin-left: 16.25rem;
     cursor: pointer;
+
+    @include largeDesktopScreen() {
+      margin-left: 9rem;
+    }
+
+    @include desktopScreen() {
+      margin-left: 3.25rem;
+    }
+
+    @include tabletDesktopScreen() {
+      margin-left: 2.5rem;
+    }
+
+    @include mobileTabletScreen() {
+      margin-left: 1.5rem;
+    }
   }
 
   &__nav {
@@ -107,7 +127,7 @@ body {
         }
 
         &:hover {
-          background-color: #FFF5F1;
+          background-color: $sauvignon;
         }
       }
 
@@ -119,6 +139,10 @@ body {
         text-wrap: nowrap;
         margin-left: 0.75rem;
       }
+    }
+
+    @include tabletDesktopScreen() {
+      display: none;
     }
   }
 
@@ -138,9 +162,165 @@ body {
     letter-spacing: 0.025rem;
     cursor: pointer;
     margin-right: 16.25rem;
+    padding-top: 3px;
 
     &:hover {
       background-color: rgba(255, 135, 83, 0.10);
+    }
+
+    @include largeDesktopScreen() {
+      margin-right: 9rem;
+    }
+
+    @include desktopScreen() {
+      margin-right: 3.25rem;
+    }
+
+    @include tabletDesktopScreen() {
+      margin-right: 1.25rem;
+    }
+  }
+
+  &__hamburger-menu-checkbox {
+    display: none;
+  }
+
+  &__hamburger-menu-checkbox:checked~&__mobile-menu-wrapper {
+    @include tabletDesktopScreen() {
+      display: block;
+    }
+  }
+
+  &__hamburger-menu-checkbox:checked~&__hamburger-menu-label {
+    .header__hamburger-menu-icon {
+      display: none;
+    }
+
+    .header__hamburger-menu-icon_close {
+      display: block;
+    }
+  }
+
+  &__hamburger-menu-label {
+    display: none;
+    align-items: center;
+    cursor: pointer;
+
+    @include tabletDesktopScreen() {
+      display: flex;
+      margin-right: 2.5rem;
+    }
+
+    @include mobileTabletScreen() {
+      margin-right: 1.5rem;
+    }
+  }
+
+  &__hamburger-menu-icon_close {
+    display: none;
+  }
+
+  &__right-wrapper {
+    display: flex;
+  }
+
+  &__mobile-menu-wrapper {
+    display: none;
+    position: absolute;
+    top: 5rem;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $bgPrimary;
+  }
+
+  &__mobile-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 3.75rem;
+      padding: 0 2.5rem;
+      color: $labelEighthLight;
+      font-size: 1.125rem;
+      font-weight: 700;
+      line-height: 140%;
+      cursor: pointer;
+      border-bottom: 1px solid $bgSecondary;
+      text-decoration: none;
+
+      @include mobileTabletScreen() {
+        padding: 0 1.5rem;
+      }
+    }
+  }
+
+  &__mobile-nav-list-item-checkbox {
+    display: none;
+  }
+
+  &__mobile-nav-list-item-checkbox:checked~&__mobile-nav-list-item-label {
+    .header__mobile-nav-list-item-icon {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__mobile-nav-list-item-checkbox:checked~&__inner-mobile-nav-list {
+    height: auto;
+  }
+
+  &__mobile-nav-list-item-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 3.75rem;
+    padding: 0 2.5rem;
+    color: $labelEighthLight;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 140%;
+    cursor: pointer;
+    border-bottom: 1px solid $bgSecondary;
+
+    @include mobileTabletScreen() {
+      padding: 0 1.5rem;
+    }
+  }
+
+  &__inner-mobile-nav-list {
+    width: 100%;
+    height: 0;
+    list-style: none;
+    padding: 0;
+    overflow: hidden;
+
+    &-link {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 3.75rem;
+      padding-left: 3.75rem;
+      background-color: $codGray;
+      border-bottom: 1px solid $bgSecondary;
+      color: $labelEighthLight;
+      font-weight: 500;
+      line-height: 140%;
+      text-decoration: none;
+
+      @include mobileTabletScreen() {
+        padding-left: 2.5rem;
+      }
     }
   }
 }
