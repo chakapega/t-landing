@@ -163,6 +163,7 @@ body {
     cursor: pointer;
     margin-right: 16.25rem;
     padding-top: 3px;
+    text-transform: uppercase;
 
     &:hover {
       background-color: rgba(255, 135, 83, 0.10);
@@ -355,6 +356,99 @@ body {
 
       @include mobileTabletScreen() {
         margin-top: 0.75rem;
+      }
+    }
+  }
+}
+
+.main {
+  &__become-publisher-section {
+    display: flex;
+    flex-direction: column;
+    padding: 6.25rem 0;
+    align-items: center;
+    background: var(--BG-Gradient, radial-gradient(131.15% 100% at 50% 100%, #553B35 0%, rgba(43, 39, 38, 0.00) 100%), #2B2726);
+    box-sizing: border-box;
+
+    span {
+      color: $brandPrimary;
+      font-size: 0.875rem;
+      font-weight: 600;
+      line-height: 140%;
+      letter-spacing: 0.05rem;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      color: $labelEighthLight;
+      font-size: 3rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 120%;
+      text-align: center;
+      margin: 1.25rem 0;
+      max-width: 65.5rem;
+    }
+
+    p {
+      color: $labelFifthLight;
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: 500;
+      line-height: 140%;
+      margin: 0;
+      max-width: 65.5rem;
+    }
+
+    button {
+      display: flex;
+      height: 3.75rem;
+      min-width: 11.25rem;
+      padding: 1.25rem 1.75rem;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0.5rem;
+      background: $brandPrimary;
+      border: none;
+      margin-top: 3.75rem;
+      color: $labelEighthLight;
+      text-align: center;
+      font-weight: 700;
+      line-height: 140%;
+      letter-spacing: 0.025rem;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $burningOrange;
+      }
+
+      &:active {
+        background-color: $orange;
+      }
+
+      @include mobileTabletScreen() {
+        width: 100%;
+      }
+    }
+
+    @include desktopScreen() {
+      padding: 6.25rem 8.25rem;
+    }
+
+    @include tabletDesktopScreen() {
+      padding: 6.25rem 2.5rem;
+
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
+
+    @include mobileTabletScreen() {
+      padding: 5rem 1.5rem;
+
+      h1 {
+        font-size: 2.25rem;
       }
     }
   }
