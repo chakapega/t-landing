@@ -38,6 +38,12 @@ body {
   }
 }
 
+.word-break {
+  @include mobileTabletScreen() {
+    word-break: break-all;
+  }
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -478,6 +484,56 @@ body {
     background-color: $linen;
   }
 
+  &__info-blocks-wrapper_capabilities-bottom {
+    @include tabletDesktopScreen() {
+      flex-direction: column;
+    }
+  }
+
+  &__info-blocks-wrapper_capabilities-bottom &__inner-info-block {
+    display: flex;
+    margin-top: 3.75rem;
+    align-items: start;
+
+    img {
+      margin-right: 1.25rem;
+
+      @include mobileTabletScreen() {
+        margin: 0 0 1.25rem 0;
+      }
+    }
+
+    h3 {
+      color: $labelPrimaryLight;
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 130%;
+      margin: 0;
+
+      @include mobileTabletScreen() {
+        text-align: center;
+      }
+    }
+
+    p {
+      color: $labelSecondaryLight;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 140%;
+      margin: 0.75rem 0 0 0;
+    }
+
+    @include mobileTabletScreen() {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__info-blocks-wrapper_capabilities-bottom &__inner-info-block_bottom {
+    display: flex;
+    margin-top: 2.5rem;
+  }
+
   &__info-block {
     display: flex;
     flex-direction: column;
@@ -544,14 +600,53 @@ body {
   }
 
   &__info-block_qbigads-description {
-    h2 {
-      @include mobileTabletScreen() {
-        word-break: break-all;
+    button {
+      margin-top: 3.75rem;
+    }
+  }
+
+  &__info-block_capabilities-bottom {
+    border-radius: 1rem;
+    padding: 3.75rem 2.5rem;
+    justify-content: start;
+
+    &:first-child {
+      background-color: $zircon;
+
+      @include tabletDesktopScreen() {
+        margin: 0 0 1.25rem 0;
       }
     }
 
-    button {
-      margin-top: 3.75rem;
+    &:last-child {
+      background-color: $linen;
+    }
+
+    h2 {
+      color: $labelPrimaryLight;
+      font-size: 1.75rem;
+      font-weight: 500;
+      line-height: 140%;
+    }
+
+    p {
+      color: $labelPrimaryLight;
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 140%;
+    }
+
+    img {
+      width: auto;
+      height: auto;
+    }
+
+    @include tabletDesktopScreen() {
+      max-width: 100%;
+    }
+
+    @include mobileTabletScreen() {
+      max-width: 29.625rem;
     }
   }
 }
