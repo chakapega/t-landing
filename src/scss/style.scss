@@ -187,7 +187,7 @@ body {
 
   &__hamburger-menu-checkbox:checked~&__mobile-menu-wrapper {
     @include tabletDesktopScreen() {
-      display: block;
+      display: flex;
     }
   }
 
@@ -226,6 +226,8 @@ body {
 
   &__mobile-menu-wrapper {
     display: none;
+    flex-direction: column;
+    justify-content: space-between;
     position: absolute;
     top: 5rem;
     right: 0;
@@ -320,6 +322,39 @@ body {
 
       @include mobileTabletScreen() {
         padding-left: 2.5rem;
+      }
+    }
+  }
+
+  &__mobile-menu-ads-block {
+    display: flex;
+    padding: 1.25rem 2.5rem;
+    margin: 2.5rem;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.5rem;
+    background: $brandPrimary;
+    color: $tutu;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 140%;
+
+    @include mobileTabletScreen() {
+      flex-direction: column;
+      align-items: start;
+      margin: 1.5rem;
+    }
+
+    a {
+      color: $labelEighthLight;
+      font-size: 0.875rem;
+      font-weight: 700;
+      line-height: 140%;
+      letter-spacing: 0.025rem;
+      text-decoration-line: underline;
+
+      @include mobileTabletScreen() {
+        margin-top: 0.75rem;
       }
     }
   }
