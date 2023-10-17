@@ -7,6 +7,37 @@ body {
   font-style: normal;
 }
 
+.primary-button {
+  display: flex;
+  height: 3.75rem;
+  min-width: 11.25rem;
+  padding: 1.25rem 1.75rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  background: $brandPrimary;
+  border: none;
+  color: $labelEighthLight;
+  text-align: center;
+  font-weight: 700;
+  line-height: 140%;
+  letter-spacing: 0.025rem;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $burningOrange;
+  }
+
+  &:active {
+    background-color: $orange;
+  }
+
+  @include mobileTabletScreen() {
+    width: 100%;
+  }
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -401,35 +432,7 @@ body {
     }
 
     button {
-      display: flex;
-      height: 3.75rem;
-      min-width: 11.25rem;
-      padding: 1.25rem 1.75rem;
-      justify-content: center;
-      align-items: center;
-      border-radius: 0.5rem;
-      background: $brandPrimary;
-      border: none;
       margin-top: 3.75rem;
-      color: $labelEighthLight;
-      text-align: center;
-      font-weight: 700;
-      line-height: 140%;
-      letter-spacing: 0.025rem;
-      text-transform: uppercase;
-      cursor: pointer;
-
-      &:hover {
-        background-color: $burningOrange;
-      }
-
-      &:active {
-        background-color: $orange;
-      }
-
-      @include mobileTabletScreen() {
-        width: 100%;
-      }
     }
 
     @include desktopScreen() {
@@ -453,66 +456,7 @@ body {
     }
   }
 
-  &__our-capabilities-section {
-    display: flex;
-    justify-content: center;
-    padding: 6.25rem 3.25rem;
-    background: $linen;
-
-    @include tabletDesktopScreen() {
-      padding: 6.25rem 2.5rem;
-    }
-
-    @include mobileTabletScreen() {
-      padding: 6.25rem 1.5rem;
-      flex-direction: column;
-    }
-  }
-
-  &__capability-block {
-    display: flex;
-    flex: 1;
-    padding: 2.5rem;
-    flex-direction: column;
-    align-items: flex-start;
-    border-radius: 1rem;
-    background: $labelEighthLight;
-    max-width: 42.5rem;
-    box-sizing: border-box;
-
-    &:first-child {
-      margin-right: 2.5rem;
-
-      @include tabletDesktopScreen() {
-        margin-right: 1.25rem;
-      }
-
-      @include mobileTabletScreen() {
-        margin: 0 0 1.25rem 0;
-      }
-    }
-
-    h2 {
-      color: $labelPrimaryLight;
-      font-size: 2rem;
-      font-weight: 700;
-      line-height: 130%;
-      margin: 1.25rem 0;
-    }
-
-    p {
-      color: $labelSecondaryLight;
-      font-size: 1.25rem;
-      line-height: 140%;
-      margin: 0;
-    }
-
-    @include mobileTabletScreen() {
-      max-width: 100%;
-    }
-  }
-
-  &__our-mission-section {
+  &__info-blocks-wrapper {
     display: flex;
     justify-content: center;
     padding: 6.25rem 3.25rem;
@@ -528,7 +472,11 @@ body {
     }
   }
 
-  &__our-mission-info-block {
+  &__info-blocks-wrapper_capabilities {
+    background-color: $linen;
+  }
+
+  &__info-block {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -571,6 +519,37 @@ body {
 
     @include mobileTabletScreen() {
       max-width: 29.625rem;
+    }
+  }
+
+  &__info-block_capabilities {
+    padding: 2.5rem;
+    background-color: $labelEighthLight;
+    border-radius: 1rem;
+
+    img {
+      width: auto;
+      height: auto;
+    }
+
+    h2 {
+      margin-top: 1.25rem;
+    }
+
+    @include mobileTabletScreen() {
+      max-width: 100%;
+    }
+  }
+
+  &__info-block_qbigads-description {
+    h2 {
+      @include mobileTabletScreen() {
+        word-break: break-all;
+      }
+    }
+
+    button {
+      margin-top: 3.75rem;
     }
   }
 }
