@@ -20,5 +20,11 @@
     "webpack": "^5.36.2",
     "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^4.11.1"
-  }
+  },
+  "browserslist": [
+    ">1%",
+    "not ie 11",
+    "not op_mini all",
+    "not dead"
+  ]
 }
