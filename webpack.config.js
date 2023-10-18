@@ -3,6 +3,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const { merge } = require('webpack-merge');
+const webpack = require("webpack");
+const autoprefixer = require("autoprefixer");
 
 const baseConfig = {
   devtool: 'source-map',
@@ -14,11 +16,11 @@ const baseConfig = {
     rules: [
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
       },
     ],
   },
@@ -35,6 +37,13 @@ const baseConfig = {
           to: './images',
         },
       ],
+    }),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+          postcss: [
+              autoprefixer()
+          ]
+      }
     }),
   ],
   resolve: {
