@@ -694,3 +694,74 @@ body {
     }
   }
 }
+
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 3.75rem 3.25rem;
+  background: $bgPrimary;
+
+  &__logo-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: 20rem;
+
+    a {
+      text-decoration: none;
+      color: $labelTertiaryLight;
+      font-size: 0.875rem;
+      font-weight: 500;
+      line-height: 140%;
+
+      &:first-child {
+        margin-bottom: 1.25rem;
+      }
+    }
+  }
+
+  &__links-block {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-left: 2.5rem;
+    max-width: 20rem;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    span {
+      color: $labelEighthLight;
+      font-size: 0.75rem;
+      font-weight: 600;
+      line-height: 140%;
+      letter-spacing: 0.05rem;
+      text-transform: uppercase;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid $bgSecondary;
+      margin-bottom: 1.25rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: $labelTertiaryLight;
+      font-size: 0.875rem;
+      font-weight: 500;
+      line-height: 140%;
+      margin-bottom: 0.5rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @include mobileTabletScreen() {
+      display: none;
+    }
+  }
+
+  @include tabletDesktopScreen() {
+    padding: 3.75rem 2.5rem;
+  }
+}
