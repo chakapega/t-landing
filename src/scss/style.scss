@@ -406,7 +406,7 @@ body {
     flex-direction: column;
     padding: 6.25rem 0;
     align-items: center;
-    background: var(--BG-Gradient, radial-gradient(131.15% 100% at 50% 100%, #553B35 0%, rgba(43, 39, 38, 0.00) 100%), #2B2726);
+    background: radial-gradient(131.15% 100% at 50% 100%, #553B35 0%, rgba(43, 39, 38, 0.00) 100%), #2B2726;
     box-sizing: border-box;
 
     span {
@@ -647,6 +647,51 @@ body {
 
     @include mobileTabletScreen() {
       max-width: 29.625rem;
+    }
+  }
+
+  &__join-section {
+    display: flex;
+    flex-direction: column;
+    padding: 3.75rem 3.25rem;
+    align-items: center;
+    background-color: $brandPrimary;
+
+    h2 {
+      color: $labelEighthLight;
+      text-align: center;
+      font-size: 1.75rem;
+      font-weight: 500;
+      line-height: 140%;
+      margin: 0 0 2.5rem 0;
+    }
+
+    @include mobileTabletScreen() {
+      padding: 3.75rem 1.5rem;
+    }
+  }
+
+  &__join-button {
+    display: flex;
+    height: 3.75rem;
+    min-width: 11.25rem;
+    padding: 1.25rem 1.75rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: $labelEighthLight;
+    color: $labelPrimaryLight;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 140%;
+    letter-spacing: 0.025rem;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      background: linear-gradient(0deg, rgba(255, 135, 83, 0.20) 0%, rgba(255, 135, 83, 0.20) 100%), #FFF;
     }
   }
 }
