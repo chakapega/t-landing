@@ -318,46 +318,7 @@ body {
   }
 
   &__become-publisher-section {
-    display: flex;
-    flex-direction: column;
     padding: 6.25rem 0;
-    align-items: center;
-    background: radial-gradient(131.15% 100% at 50% 100%, #553B35 0%, rgba(43, 39, 38, 0.00) 100%), #2B2726;
-    box-sizing: border-box;
-
-    span {
-      color: $brandPrimary;
-      font-size: 0.875rem;
-      font-weight: 600;
-      line-height: 140%;
-      letter-spacing: 0.05rem;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      color: $labelEighthLight;
-      font-size: 3rem;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 120%;
-      text-align: center;
-      margin: 1.25rem 0;
-      max-width: 65.5rem;
-    }
-
-    p {
-      color: $labelFifthLight;
-      text-align: center;
-      font-size: 1.25rem;
-      font-weight: 500;
-      line-height: 140%;
-      margin: 0;
-      max-width: 65.5rem;
-    }
-
-    button {
-      margin-top: 3.75rem;
-    }
 
     @include desktopScreen() {
       padding: 6.25rem 8.25rem;
@@ -365,18 +326,10 @@ body {
 
     @include tabletDesktopScreen() {
       padding: 6.25rem 2.5rem;
-
-      h1 {
-        font-size: 2.5rem;
-      }
     }
 
     @include mobileTabletScreen() {
       padding: 5rem 1.5rem;
-
-      h1 {
-        font-size: 2.25rem;
-      }
     }
   }
 
@@ -609,6 +562,56 @@ body {
     &:hover {
       background: linear-gradient(0deg, rgba(255, 135, 83, 0.20) 0%, rgba(255, 135, 83, 0.20) 100%), #FFF;
     }
+  }
+}
+
+.become-publisher-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: radial-gradient(131.15% 100% at 50% 100%, #553B35 0%, rgba(43, 39, 38, 0.00) 100%), #2B2726;
+  box-sizing: border-box;
+
+  &__top-text {
+    color: $brandPrimary;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 140%;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    color: $labelEighthLight;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    text-align: center;
+    margin: 1.25rem 0;
+    max-width: 65.5rem;
+
+    @include tabletDesktopScreen() {
+      font-size: 2.5rem;
+    }
+
+    @include mobileTabletScreen() {
+      font-size: 2.25rem;
+    }
+  }
+
+  &__description {
+    color: $labelFifthLight;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 140%;
+    margin: 0;
+    max-width: 65.5rem;
+  }
+
+  &__button {
+    margin-top: 3.75rem;
   }
 }
 
