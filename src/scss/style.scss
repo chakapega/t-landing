@@ -317,22 +317,6 @@ body {
     display: none;
   }
 
-  &__become-publisher-section {
-    padding: 6.25rem 0;
-
-    @include desktopScreen() {
-      padding: 6.25rem 8.25rem;
-    }
-
-    @include tabletDesktopScreen() {
-      padding: 6.25rem 2.5rem;
-    }
-
-    @include mobileTabletScreen() {
-      padding: 5rem 1.5rem;
-    }
-  }
-
   &__info-blocks-wrapper {
     display: flex;
     justify-content: center;
@@ -347,10 +331,6 @@ body {
       flex-direction: column;
       align-items: center;
     }
-  }
-
-  &__info-blocks-wrapper_capabilities {
-    background-color: $linen;
   }
 
   &__info-blocks-wrapper_capabilities-bottom {
@@ -446,25 +426,6 @@ body {
 
     @include mobileTabletScreen() {
       max-width: 29.625rem;
-    }
-  }
-
-  &__info-block_capabilities {
-    padding: 2.5rem;
-    background-color: $labelEighthLight;
-    border-radius: 1rem;
-
-    img {
-      width: auto;
-      height: auto;
-    }
-
-    h2 {
-      margin-top: 1.25rem;
-    }
-
-    @include mobileTabletScreen() {
-      max-width: 100%;
     }
   }
 
@@ -571,6 +532,19 @@ body {
   align-items: center;
   background: radial-gradient(131.15% 100% at 50% 100%, #553B35 0%, rgba(43, 39, 38, 0.00) 100%), #2B2726;
   box-sizing: border-box;
+  padding: 6.25rem 0;
+
+  @include desktopScreen() {
+    padding: 6.25rem 8.25rem;
+  }
+
+  @include tabletDesktopScreen() {
+    padding: 6.25rem 2.5rem;
+  }
+
+  @include mobileTabletScreen() {
+    padding: 5rem 1.5rem;
+  }
 
   &__top-text {
     color: $brandPrimary;
@@ -612,6 +586,67 @@ body {
 
   &__button {
     margin-top: 3.75rem;
+  }
+}
+
+.capabilities-section {
+  display: flex;
+  justify-content: center;
+  padding: 6.25rem 3.25rem;
+  background-color: $linen;
+
+  @include tabletDesktopScreen() {
+    padding: 6.25rem 2.5rem;
+  }
+
+  @include mobileTabletScreen() {
+    padding: 6.25rem 1.5rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__info-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    flex: 1;
+    max-width: 42.5rem;
+    box-sizing: border-box;
+    padding: 2.5rem;
+    background-color: $labelEighthLight;
+    border-radius: 1rem;
+
+    @include mobileTabletScreen() {
+      max-width: 100%;
+    }
+
+    &:first-child {
+      margin-right: 2.5rem;
+
+      @include tabletDesktopScreen() {
+        margin-right: 1.25rem;
+      }
+
+      @include mobileTabletScreen() {
+        margin: 0 0 1.25rem 0;
+      }
+    }
+  }
+
+  &__title {
+    color: $labelPrimaryLight;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 130%;
+    margin-top: 1.25rem 0 0 0;
+  }
+
+  &__description {
+    color: $labelSecondaryLight;
+    font-size: 1.25rem;
+    line-height: 140%;
+    margin: 1.25rem 0 0 0;
   }
 }
 
